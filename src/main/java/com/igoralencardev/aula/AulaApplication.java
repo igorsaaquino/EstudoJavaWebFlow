@@ -21,7 +21,6 @@ public class AulaApplication {
 	Locale.setDefault(Locale.US);
 	Scanner sc = new Scanner(System.in);
 
-
 		System.out.print("Nome: ");
 	String name = sc.nextLine();
 		System.out.print("Salário Bruto: ");
