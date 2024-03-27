@@ -1,6 +1,7 @@
 package com.igoralencardev.aula;
 
 import com.igoralencardev.entities.Employee;
+import com.igoralencardev.services.BrazilTaxService;
 import com.igoralencardev.services.PensionService;
 import com.igoralencardev.services.SalaryService;
 import com.igoralencardev.services.TaxService;
@@ -30,9 +31,9 @@ public class AulaApplication implements CommandLineRunner {
 		double grossSalary = sc.nextDouble();
 
 		Employee employee = new Employee(name, grossSalary);
-		TaxService taxService = new TaxService();
+		BrazilTaxService brazilTaxService = new BrazilTaxService();
 		PensionService pensionService = new PensionService();
-		SalaryService salaryService = new SalaryService(taxService, pensionService);
+		SalaryService salaryService = new SalaryService(brazilTaxService, pensionService);
 
 		double netSalary = salaryService.netSalary(employee);
 		System.out.printf("Salario liquido = %.2f%n",netSalary);
